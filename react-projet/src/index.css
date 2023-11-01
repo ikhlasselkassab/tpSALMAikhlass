@@ -1,0 +1,213 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.cv {
+  column-count: 2;
+  column-rule-style: solid
+}
+
+
+.section {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #3333cc;
+}
+h2 {
+  font-size: 24px;
+  color: #3333cc
+  
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+
+}
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+li {
+  font-size: 16px;
+  
+}
+.cv-container {
+  display: flex;
+}
+.cv-sidebar {
+  width: 33%;
+  background-color: #f0f0f0; /* Couleur de fond de la colonne de gauche */
+  padding: 20px;
+}
+
+.cv-main {
+  width: 66%;
+  background-color: #ffffff; /* Couleur de fond de la colonne de droite */
+  padding: 20px;
+}
+progress {
+  width: 70%;
+  height: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f0f0f0; /* Couleur de fond grise */
+}
+
+progress::-webkit-progress-value {
+  background-color: #0074d9; /* Couleur bleue pour la progression */
+}
+.cv-sidebar img {
+  width: 150px; /* Largeur souhaitée */
+  height: auto; /* Hauteur ajustée automatiquement pour conserver les proportions */
+}
+
+
+.cv-formation {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #3498db;
+  border-radius: 50%;
+  margin-right: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.timeline-content {
+  flex: 1;
+  position: relative;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #666;
+}
+
+.timeline-line {
+  width: 2px;
+  background-color: #3498db;
+  height: 100%;
+  position: absolute;
+  left: 6px; /* Ajustez l'emplacement du trait */
+}
+
+.timeline-date {
+  font-size: 16px;
+  color: #3498db;
+  font-weight: bold;
+  text-align: right;
+}
+.professional-objective-textarea {
+  height: 100px;
+  width: 100%;
+}
+.text-red-500 {
+  color: #ef4444; /* Couleur rouge */
+}
