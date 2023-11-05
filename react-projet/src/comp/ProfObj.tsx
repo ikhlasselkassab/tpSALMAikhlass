@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index1.css'
+
 
 
 interface ProfessionalObjectiveState {
@@ -61,9 +61,7 @@ const ProfessionalObjective: React.FC = () => {
         Objectif :<br />
         <textarea name="objective" value={objectiveInfo.objective}  onChange={handleChange} className="professional-objective-textarea" required />
       </label>
-      <div>
-        <button type="submit">Soumettre</button>
-      </div>
+      
     </form>
   );
 };

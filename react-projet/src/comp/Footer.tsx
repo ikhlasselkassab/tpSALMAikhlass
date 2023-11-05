@@ -1,9 +1,9 @@
 function Footer(){
     return(
-        <footer>
-            <p>Edité par : MAHDIOUI Salma et EL KASSAB Ikhlass</p>
-            <p>Dernière mise à jour: 31 Septembre 2023</p>
-            <p>Droits d'auteur &copy; 2023 </p>
+        <footer className="footer">
+            <p>Edité par : MAHDIOUI Salma et EL KASSAB Ikhlass
+            Dernière mise à jour: 05 Novembre 2023
+            Droits d'auteur &copy; 2023 </p>
         </footer>
     );
 

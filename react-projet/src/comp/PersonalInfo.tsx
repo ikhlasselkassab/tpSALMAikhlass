@@ -1,33 +1,24 @@
 import React, { useState } from 'react';
-import './index1.css'
 
-
-
-interface PersonalInfoState {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-  age: number;
+interface PersonalInfoProps {
+  setPersonalInfoValid: (isValid: boolean) => void;
 }
 
-const PersonalInfo: React.FC = () => {
-  const [personalInfo, setPersonalInfo] = useState<PersonalInfoState>({
+function PersonalInfo({ setPersonalInfoValid }: PersonalInfoProps) {
+  const [personalInfo, setPersonalInfo] = useState({
     firstName: '',
     lastName: '',
     email: '',
     phone: '',
     address: '',
-    age:0,
-
-    
+    age: 0,
   });
+
   const [errors, setErrors] = useState({
     email: '',
     firstName: '',
     lastName: '',
-    age:'',
+    age: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,22 +34,18 @@ const PersonalInfo: React.FC = () => {
         [name]: value,
       });
     }
-  
+
     setErrors({
-        ...errors,
-        [name]: '',
+      ...errors,
+      [name]: '',
     });
-
   };
-
- 
 
   const capitalizeFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
 
+  const validatePersonalInfo = () => {
     // Validation de l'e-mail
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (!emailRegex.test(personalInfo.email)) {
@@ -69,68 +56,69 @@ const PersonalInfo: React.FC = () => {
     }
 
     // Validation du nom en majuscules
-  
-    
     if (personalInfo.lastName.toUpperCase() !== personalInfo.lastName) {
       setErrors({
         ...errors,
         lastName: 'Le nom doit être en majuscules',
       });
     }
+
     if (personalInfo.age <= 18) {
       setErrors({
         ...errors,
-        age : "L'âge doit être supérieur à 18",
+        age: "L'âge doit être supérieur à 18",
       });
-      
     }
 
     // Vérifier s'il y a des erreurs de validation
     if (!errors.email && !errors.firstName && !errors.lastName && !errors.age) {
-      console.log('Données soumises :', FormData);
-      
-      // Envoyer les données au backend ou effectuer d'autres actions ici.
+      return true;
+    } else {
+      return false;
     }
   };
- 
 
   return (
-    <form className="cv-form-section" onSubmit={handleSubmit}>
+    <div>
       <h2>Informations Personnelles</h2>
       <label>
-        Prenom :
+        Prénom:
         <input type="text" name="firstName" value={personalInfo.firstName} onChange={handleChange} required /><br />
       </label>
       {errors.firstName && <p className="text-red-500">{errors.firstName}</p>}
       <label>
-        Nom :
-        <input type="text" name="lastName" value={personalInfo.lastName} onChange={handleChange} required/><br />
+        Nom:
+        <input type="text" name="lastName" value={personalInfo.lastName} onChange={handleChange} required /><br />
       </label>
       {errors.lastName && <p className="text-red-500">{errors.lastName}</p>}
       <label>
-       Email:
-        <input type="text" name="email" value={personalInfo.email} onChange={handleChange} required/><br />
+        Email:
+        <input type="text" name="email" value={personalInfo.email} onChange={handleChange} required /><br />
         {errors.email && <p className="text-red-500">{errors.email}</p>}
       </label>
       <label>
-       Âge :
-        <input type="number" name="age" value={personalInfo.age} onChange={handleChange} required/><br />
+        Âge:
+        <input type="number" name="age" value={personalInfo.age} onChange={handleChange} required /><br />
       </label>
-        {errors.age && <p className="text-red-500">{errors.age}</p>}
+      {errors.age && <p className="text-red-500">{errors.age}</p>}
       <label>
         Adresse:
-        <input type="text" name="address" value={personalInfo.address} onChange={handleChange} required/><br />
+        <input type="text" name="address" value={personalInfo.address} onChange={handleChange} required /><br />
       </label>
       <label>
         Téléphone:
         <input type="tel" name="phone" value={personalInfo.phone} onChange={handleChange} /><br />
       </label>
-      <div>
-        <button type="submit">Verification</button>
-      </div>
-      
-    </form>
+      <button
+        onClick={() => setPersonalInfoValid(validatePersonalInfo())}
+      >
+        Valider
+      </button>
+    </div>
   );
-};
+}
 
 export default PersonalInfo;
+
+
+

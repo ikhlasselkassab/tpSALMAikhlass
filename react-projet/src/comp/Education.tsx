@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import './index1.css'
-
 interface EducationState {
   institution: string;
   degree: string;
