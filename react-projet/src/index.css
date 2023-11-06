@@ -217,21 +217,21 @@ h2 {
   width: 100%;
 }
 .text-red-500 {
-  color: #ef4444; /* Couleur rouge */
+  color: #ef4444; 
 }
 .element-avant-footer {
-  margin-bottom: 140px; /* Marge inférieure égale à la hauteur du Footer */
+  margin-bottom: 140px; 
 }
 
 .footer {
-  background-color:#f0f0f0 ; /* Couleur d'arrière-plan du footer */
-  color: black; /* Couleur du texte */
-  padding: 10px; /* Marge intérieure pour l'espacement */
-  position:absolute; /* Position fixe pour rester en bas de la fenêtre visible */
-  bottom: 0; /* Coller en bas de la fenêtre */
-  width: 97.5%; /* Largeur de 100% de la fenêtre */
-  text-align: center; /* Centrer le texte horizontalement */
-  height:30px; /* Hauteur du Footer */
+  background-color:#f0f0f0 ;
+  color: black; 
+  padding: 10px; 
+  position:absolute; 
+  bottom: 0; 
+  width: 97.5%; 
+  text-align: center; 
+  height:30px; 
   font-family:"Times New Roman",  Times, serif ;
 }
 
